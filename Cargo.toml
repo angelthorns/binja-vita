@@ -7,4 +7,7 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+anyhow = "1.0.79"
 binaryninja = {git = "https://github.com/Vector35/binaryninja-api.git", branch = "dev"}
+log = "0.4.20"
+marked-yaml = "0.2.2"
