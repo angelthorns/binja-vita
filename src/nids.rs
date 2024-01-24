@@ -1,15 +1,6 @@
-use std::{
-    collections::{hash_map::OccupiedEntry, BTreeMap},
-    error::Error,
-    fs::File,
-    io::BufReader,
-    path::Path,
-};
+use std::{collections::BTreeMap, error::Error, fs::File, io::BufReader, path::Path};
 
-use marked_yaml::{
-    types::{MarkedMappingNode, MarkedScalarNode},
-    Node,
-};
+use marked_yaml::{types::MarkedMappingNode, Node};
 
 use anyhow::anyhow;
 
@@ -18,19 +9,19 @@ pub type NidName = String;
 
 #[derive(Debug, Clone)]
 pub struct VitaFunction {
-    nid: Nid,
-    name: String,
+    pub nid: Nid,
+    pub name: String,
 }
 pub struct VitaLibrary {
-    nid: Nid,
-    name: String,
-    functions: BTreeMap<Nid, VitaFunction>,
+    pub nid: Nid,
+    pub name: String,
+    pub functions: BTreeMap<Nid, VitaFunction>,
 }
 
 pub struct VitaModule {
-    nid: Nid,
-    name: String,
-    libraries: BTreeMap<Nid, VitaLibrary>,
+    pub nid: Nid,
+    pub name: String,
+    pub libraries: BTreeMap<Nid, VitaLibrary>,
 }
 
 pub struct NidsDB {
